@@ -22,7 +22,7 @@ namespace snake.Data
             HeadElementColor = Color.Green;
             DefaultStartPoint = new Point(100, 100);
             DefaultShift = 10;
-            DefaultElementSize = 10;
+            DefaultElementSize = 50;
         }
     }
 }

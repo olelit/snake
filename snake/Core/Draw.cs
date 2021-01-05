@@ -21,7 +21,7 @@ namespace snake.Core
         public void DrawRect(Element element)
         {
             Rectangle rect = new Rectangle(element.Position, new Size(element.Size, element.Size));
-            _G.FillRectangle(new SolidBrush(element.BlockColor), rect);
+            _G.DrawRectangle(new Pen(element.BlockColor), rect);
         }
     }
 }

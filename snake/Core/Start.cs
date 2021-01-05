@@ -1,4 +1,5 @@
-﻿using snake.Model;
+﻿using snake.Data;
+using snake.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,11 @@ namespace snake.Core
     {
         public void Execute()
         {
-            var element = new Element(); 
+            var element = new Head();
+            var el1 = new Element();
+            var el2 = new Element();
+            var el3 = new Element();
+            var el4 = new Element();
         }
     }
 }

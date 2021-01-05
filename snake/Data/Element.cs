@@ -8,23 +8,39 @@ using System.Threading.Tasks;
 
 namespace snake.Model
 {
-    class Element
+    public class Element
     {
-        public Element Previous { get; private set; }
-        public Point Position { get; private set; }
-        public Color BlockColor { get; private set; }
+        public Element Previous { get; protected set; }
+        public Point Position { get; protected set; }
+        public Point PreviousPosition { get; protected set; }
+        public Color BlockColor { get; protected set; }
         public int Size => DefaultData.DefaultElementSize;
 
         public Element()
         {
-            Position = DefaultData.DefaultStartPoint;
-            BlockColor = DefaultData.HeadElementColor;
+            if(ElementManager.Elements != null)
+            {
+                Element last = ElementManager.Last();
+                if (last != null)
+                {
+                    Position = last.Position;
+                    Previous = last;
+                }
+            }
+
+            PreviousPosition = Position;
             ElementManager.Add(this);
         }
 
-        public Element(Element previous, Point position)
+        public virtual void Move()
         {
-            ElementManager.Add(this);
+            Position = Previous.PreviousPosition;
+            Previous.ChangePrevPosition();
+        }
+
+        public void ChangePrevPosition()
+        {
+            PreviousPosition = Position;
         }
 
     }

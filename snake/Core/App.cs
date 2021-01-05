@@ -11,12 +11,14 @@ namespace snake.Core
     {
 
         private Start _Start;
+        private ControlManager _ControlManager;
 
         public App()
         {
             DefaultData.Run();
 
             _Start = new Start();
+            _ControlManager = new ControlManager();
             _Start.Execute();
         }
     }

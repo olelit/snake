@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace snake.Core.Refresh
@@ -29,6 +29,7 @@ namespace snake.Core.Refresh
 
             foreach (var element in ElementManager.Elements)
             {
+                element.Move();
                 _Draw.DrawRect(element);
             }
 
