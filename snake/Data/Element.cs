@@ -23,6 +23,7 @@ namespace snake.Model
                 Element last = ElementManager.Last();
                 if (last != null)
                 {
+                    BlockColor = DefaultData.ElementColor;
                     Position = last.Position;
                     Previous = last;
                 }
@@ -35,7 +36,8 @@ namespace snake.Model
         public virtual void Move()
         {
             Position = Previous.PreviousPosition;
-            Previous.ChangePrevPosition();
+            if(Previous != null)
+                Previous.ChangePrevPosition();
         }
 
         public void ChangePrevPosition()

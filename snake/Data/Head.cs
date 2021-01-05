@@ -24,6 +24,7 @@ namespace snake.Data
 
         public override void Move()
         {
+            PreviousPosition = Position;
             Position = ControlManager.Instanse.ConvertToPosition(Position, Shift);
         }
     }
