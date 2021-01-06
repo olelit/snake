@@ -24,8 +24,14 @@ namespace snake.Data
 
         public override void Move()
         {
+            TeleportInOutOfField();
             PreviousPosition = Position;
             Position = ControlManager.Instanse.ConvertToPosition(Position, Shift);
+        }
+
+        private void TeleportInOutOfField()
+        {
+            Position = Windows.Instanse.TeleportToAnotherBorder(Position);
         }
     }
 }

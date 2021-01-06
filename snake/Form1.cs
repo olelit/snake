@@ -18,6 +18,7 @@ namespace snake
     {
         readonly App _Main;
         readonly Refresh _Refresh;
+        readonly Windows _Windows;
 
         public Form1()
         {
@@ -25,6 +26,7 @@ namespace snake
  
             InitializeComponent();
             _Refresh = new Refresh(pictureBox1);
+            _Windows = new Windows(pictureBox1);
 
         }
 

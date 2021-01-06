@@ -49,6 +49,7 @@
     <Compile Include="Core\App.cs" />
     <Compile Include="Core\ControlManager.cs" />
     <Compile Include="Core\Start.cs" />
+    <Compile Include="Core\Windows.cs" />
     <Compile Include="Data\DefaultData.cs" />
     <Compile Include="Core\Draw.cs" />
     <Compile Include="Core\Refresh\Refresh.cs" />
